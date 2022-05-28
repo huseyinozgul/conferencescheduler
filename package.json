@@ -1,0 +1,35 @@
+{
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huseyinozgul/conferencescheduler.git"
+  },
+  "keywords": [
+    "climatepartner",
+    "nodejs",
+    "conference",
+    "scheduler",
+    "typescript",
+    "jest"
+  ],
+  "author": "Hasan Huseyin Ozgul",
+  "license": "ISC",
+  "name": "conference-scheduler",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node dist/index.js",
+    "prestart": "npm run build",
+    "build": "rm -rf dist && tsc"
+  },
+  "dependencies": {
+    "@types/node": "^16.11.6",
+    "moment": "^2.29.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7"
+  }
+}
