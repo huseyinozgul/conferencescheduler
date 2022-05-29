@@ -6,13 +6,19 @@ export class NetworkEvent extends Event {
     constructor(startTime: Moment) {
         super("Networking Event", 'networking');
 
-        const netStart = getTimeFromHour('16:00');
-        const endTime = getTimeFromHour('17:00');
+        const [start, end] = NetworkEvent.getNetworkingStartEndDefault();
 
-        if (startTime.isSameOrAfter(endTime) && startTime.isBefore(netStart))
+        if (startTime.isSameOrAfter(end) && startTime.isBefore(start))
             throw new Error('Lunch event must be between 16:00-17:00');
 
         this.startTime = moment(startTime);
-        this.duration = moment.duration(endTime.diff(this.startTime)).asMinutes();
+        this.duration = moment.duration(end.diff(this.startTime)).asMinutes();
+    }
+
+    static getNetworkingStartEndDefault(): [Moment, Moment] {
+        const start = getTimeFromHour('16:00');
+        const end = getTimeFromHour('17:00');
+
+        return [start, end];
     }
 }

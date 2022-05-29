@@ -1,5 +1,5 @@
 import moment, { Moment } from "moment";
-import { EventType, Session } from "../abstractions/EventTypes";
+import { EventType, Session } from "./EventTypes";
 import { getTimeFromHour } from "../helpers";
 
 export abstract class Event {

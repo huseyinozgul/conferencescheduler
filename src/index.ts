@@ -1,4 +1,4 @@
-import { Conference } from "./conference";
+import { ConferenceFactory } from "./conference";
 
 const main = () => {
     const input = [
@@ -24,7 +24,7 @@ const main = () => {
     ];
 
     try {
-        const conference = Conference.createConference(input);
+        const conference = ConferenceFactory.createConference(input);
         conference.print();
     } catch (err: any) {
         console.log('Something goes wrong!');
