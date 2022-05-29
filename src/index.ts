@@ -1,6 +1,6 @@
 import { ConferenceFactory } from "./conference";
 
-const main = () => {
+export const main = () => {
     const input = [
         "Writing Fast Tests Against Enterprise Rails 60min",
         "Overdoing it in Python 45min",

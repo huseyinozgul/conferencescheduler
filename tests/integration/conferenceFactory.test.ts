@@ -25,13 +25,13 @@ const input = [
 
 describe('Conference integration tests', () => {
     let conference: Conference;
-    beforeAll( () => {
+    beforeAll(() => {
         conference = ConferenceFactory.createConference(input);
     });
-    it('Check Number Of Tracks',  () => {
+    it('Check Number Of Tracks', () => {
         expect(conference.tracks.length).toBe(3);
     });
-    it('Should get error when event list is empty',  () => {
+    it('Should get error when event list is empty', () => {
         try {
             ConferenceFactory.createConference([]);
             throw new Error('Code never should come in this point');
@@ -39,4 +39,11 @@ describe('Conference integration tests', () => {
             expect(err).toBeInstanceOf(Error);
         }
     });
+    it('Can Print', () => {
+        console.log = jest.fn();
+        conference.print();
+
+        expect(console.log).toHaveBeenCalled();
+    });
+
 });
