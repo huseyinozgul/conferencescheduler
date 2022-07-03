@@ -1,4 +1,4 @@
-# Conference Scheduler
+# Conference Scheduler Assesment
 Creating a conference plan depends on events' duration and some rules.
 
 ## Problem Statement
